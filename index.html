@@ -58,7 +58,7 @@
 </h1>
   <button id="musicButton" disabled>Mainkan Musik 🎵</button>
   <div id="player"></div>
-  <script src="https://youtu.be/qjMLXjTUc8Y?si=b_VNntTSV2tUMaCK"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     let player;
      const startTime = 227;
@@ -67,14 +67,14 @@
       player = new YT.Player('player', {
         height: '0',
         width: '0',
-        videoId: 'd4OMqGKBl6E',
+        videoId: 'qCjW0KrrBvc6mAm5',
         playerVars: {
           autoplay: 0,
           start: startTime,
           end: endTime,
           controls: 0,
           loop: 1,
-          playlist: 'd4OMqGKBl6E'
+          playlist: 'qCjW0KrrBvc6mAm5'
         },
         events: {
           onReady: () => {
