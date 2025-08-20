@@ -4,21 +4,16 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 
-// Loader untuk tekstur gambar
 const loader = new THREE.TextureLoader();
-const texture = loader.load("img1.jpg");
+loader.load("iamges/img1.jpg", (texture) => {
+  const geometry = new THREE.PlaneGeometry(5, 3);
+  const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+  const plane = new THREE.Mesh(geometry, material);
 
-// Buat bidang datar (plane) untuk menempelkan gambar
-const geometry = new THREE.PlaneGeometry(5, 3); // ukuran 5 x 3
-const material = new THREE.MeshBasicMaterial({
-  map: texture,
-  transparent: true, // biar bisa transparan kalau PNG
+  plane.position.set(0, 0, -5);
+  scene.add(plane);
 });
-const plane = new THREE.Mesh(geometry, material);
 
-// Posisi di scene
-plane.position.set(0, 0, -10); // 10 unit ke belakang kamera
-scene.add(plane);
 
 
 const scene = new THREE.Scene();
