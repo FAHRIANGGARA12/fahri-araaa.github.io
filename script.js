@@ -4,17 +4,6 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
 
-const loader = new THREE.TextureLoader();
-loader.load("iamges/img1.jpg", (texture) => {
-  const geometry = new THREE.PlaneGeometry(5, 3);
-  const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
-  const plane = new THREE.Mesh(geometry, material);
-
-  plane.position.set(0, 0, -5);
-  scene.add(plane);
-});
-
-
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x000000, 0.0015);
